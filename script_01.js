@@ -11,19 +11,23 @@
 // application / App
 startApp();
 function startApp() {
-    output(calculator(getNumber(),getNumber(),getOp()));
+    output(calculator(getNumber("1"),getOp(),getNumber("2")));
 }
 
 
-function getNumber() {
-    return 2;
+function getNumber(numTxt) {
+    const displayStr = "Bitte Zahl " + numTxt + " eingeben:";
+    let inputStr = prompt(displayStr);
+    let num = parseInt(inputStr);
+    return num;
 }
 
 
 function getOp() {
-    return "+";
+    const displayStr = "Bitte korrekten Operator (+ | - | * | :) eingeben";
+    let op = prompt(displayStr);
+    return op;
 }
-
 
 
 // module: calculator | tests:
@@ -34,7 +38,7 @@ function getOp() {
 // output(calculator(2,2,":"));
 // output(calculator(2,0,":"));
 // output(calculator(2,0,"#!"));
-function calculator(a,b,op) {
+function calculator(a,op,b) {
     switch (op) {
         case "+": // addition
             return add(a,b);
@@ -91,3 +95,7 @@ function add(a,b) {
  function output(inputData) {
     console.log(inputData);
  }
+
+ // TO DO:
+ // output(20) ---> "The result is: "  20
+ // output("Error") --> "Error"
