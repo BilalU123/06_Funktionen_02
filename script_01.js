@@ -8,14 +8,32 @@
 4. Ausgabe in Konsole :check!
 */
 
+// application / App
+startApp();
+function startApp() {
+    output(calculator(getNumber(),getNumber(),getOp()));
+}
+
+
+function getNumber() {
+    return 2;
+}
+
+
+function getOp() {
+    return "+";
+}
+
+
+
 // module: calculator | tests:
 // agreement : "+","-","*",":"
-output(calculator(2,2,"+"));
-output(calculator(2,2,"-"));
-output(calculator(2,2,"*"));
-output(calculator(2,2,":"));
-output(calculator(2,0,":"));
-output(calculator(2,0,"#!"));
+// output(calculator(2,2,"+"));
+// output(calculator(2,2,"-"));
+// output(calculator(2,2,"*"));
+// output(calculator(2,2,":"));
+// output(calculator(2,0,":"));
+// output(calculator(2,0,"#!"));
 function calculator(a,b,op) {
     switch (op) {
         case "+": // addition
@@ -30,8 +48,6 @@ function calculator(a,b,op) {
             return "Something went wrong!";
     }
 }
-
-
 
 // module: division a / b |  test:
 // output(divide(2,4));
