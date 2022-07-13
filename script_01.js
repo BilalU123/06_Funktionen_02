@@ -93,9 +93,9 @@ function add(a,b) {
 // output("hello");
 // output(20);
  function output(inputData) {
-    console.log(inputData);
+    if (typeof inputData == "number") {
+        console.log("The result is: " + inputData);
+    } else {
+        console.log("ERROR: " + inputData);
+    }
  }
-
- // TO DO:
- // output(20) ---> "The result is: "  20
- // output("Error") --> "Error"
