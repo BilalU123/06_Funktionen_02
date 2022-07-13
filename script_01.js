@@ -37,20 +37,24 @@ function getOp() {
 output(isOpValid("+"));
 output(isOpValid("-"));
 output(isOpValid("*"));
-output(isOpValid(":"));
+output(isOpValid("/"));
 output(isOpValid("#?#"));
 output(isOpValid(""));
 function isOpValid(op) {
 
-    switch (op) {
+    // 1st variant
+     switch (op) {
         case "+":
         case "-":
         case "*":
-        case ":":
+        case "/":
             return true;
         default:
             return false;
     }
+
+      // 2nd variant
+    //return op == "+" || op == "-" || op == "*" || op == "/";
 
 }
 
